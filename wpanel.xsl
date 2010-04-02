@@ -1,6 +1,14 @@
 <?xml version="1.0" ?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fn="http://www.w3.org/2005/xpath-functions">
-<xsl:output method="xml" version="1.0" encoding="UTF-8" doctype-public="-//W3C//DTD XHTML 1.1//EN" doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" indent="yes"/>
+<xsl:stylesheet version="1.0"
+								xmlns:xhtml="http://www.w3.org/1999/xhtml"
+								xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+								xmlns:bong="http://bong/glob/wpanel"
+								xmlns:fn="http://www.w3.org/2005/xpath-functions" >
+<xsl:output method="xml"
+						version="1.0"
+						encoding="UTF-8"
+						indent="yes" />
+<xsl:strip-space elements="bong:*" />
 <!--
 	<xsl:template match="/">
 		<html>
@@ -15,8 +23,19 @@
 	</xsl:template>
 -->
 
-	<xsl:template match="window">
-		<div class="x-panel-window">
+  <xsl:template match="*|@*">
+    <xsl:copy>
+      <xsl:apply-templates select="@*"/>
+      <xsl:apply-templates/>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="processing-instruction()|comment()">
+    <xsl:copy>.</xsl:copy>
+  </xsl:template>
+
+	<xsl:template match="bong:window">
+		<xhtml:div class="x-panel-window">
 			<xsl:attribute name="style">
 				height: <xsl:value-of select="@height" />px;
 				width:  <xsl:value-of select="@width" />px;
@@ -35,41 +54,41 @@
 			</xsl:if>
 -->
 			<xsl:if test="@titlebar='on'">
-				<div class="x-panel-titlebar">
-					<div class="x-panel-_lsub">
-						<div class="x-panel-_rsub">
-							<div class="x-panel-_msub">
+				<xhtml:div class="x-panel-titlebar">
+					<xhtml:div class="x-panel-_lsub">
+						<xhtml:div class="x-panel-_rsub">
+							<xhtml:div class="x-panel-_msub">
 								<xsl:if test="@minimizable='on' or @maximizable='on' or @closable='on'">
-									<div class="x-panel-_csub">
+									<xhtml:div class="x-panel-_csub">
 										<xsl:if test="@closable='on'">
-											<div class="x-panel-_cntrl x-panel-_ccl"></div>
+											<xhtml:div class="x-panel-_cntrl x-panel-_ccl"></xhtml:div>
 										</xsl:if>
 										<xsl:if test="@maximizable='on'">
-											<div class="x-panel-_cntrl x-panel-_cmx"></div>
+											<xhtml:div class="x-panel-_cntrl x-panel-_cmx"></xhtml:div>
 										</xsl:if>
 										<xsl:if test="@minimizable='on'">
-											<div class="x-panel-_cntrl x-panel-_cmn"></div>
+											<xhtml:div class="x-panel-_cntrl x-panel-_cmn"></xhtml:div>
 										</xsl:if>
 										<xsl:value-of select="@title" />
-									</div>
+									</xhtml:div>
 								</xsl:if>
-							</div>
-						</div>
-					</div>
-				</div>
+							</xhtml:div>
+						</xhtml:div>
+					</xhtml:div>
+				</xhtml:div>
 			</xsl:if>
-			<div class="x-panel-viewport">
+			<xhtml:div class="x-panel-viewport">
 				<xsl:attribute name="style">
 					height: <xsl:value-of select="$windowHeight - 29" />px;
 					<xsl:value-of select="$windowStyle" />
 				</xsl:attribute>
 				<xsl:apply-templates />
-			</div>
-		</div>
+			</xhtml:div>
+		</xhtml:div>
 	</xsl:template>
 
-	<xsl:template match="layout">
-		<div>
+	<xsl:template match="bong:layout">
+		<xhtml:div>
 			<xsl:attribute name="class">
 				x-panel-_layout
 				<xsl:choose>
@@ -105,27 +124,27 @@
 				</xsl:choose>
 			</xsl:attribute>
 			<xsl:apply-templates />
-		</div>
+		</xhtml:div>
 	</xsl:template>
 
-	<xsl:template match="QButton">
-		<div class="x-panel-widget x-panel-widget-button">
+	<xsl:template match="bong:QButton">
+		<xhtml:div class="x-panel-widget x-panel-widget-button">
 			<xsl:value-of select="@text" />
-		</div>
+		</xhtml:div>
 	</xsl:template>
 
-	<xsl:template match="QLineEdit">
-		<input type="text" class="x-panel-widget x-panel-widget-lineedit">
+	<xsl:template match="bong:QLineEdit">
+		<xhtml:input type="text" class="x-panel-widget x-panel-widget-lineedit">
 			<xsl:attribute name="value">
 				<xsl:value-of select="@value" />
 			</xsl:attribute>
-		</input>
+		</xhtml:input>
 	</xsl:template>
 
-	<xsl:template match="QLabel">
-		<div class="x-panel-widget x-panel-widget-label">
+	<xsl:template match="bong:QLabel">
+		<xhtml:div class="x-panel-widget x-panel-widget-label">
 			<xsl:apply-templates />
-		</div>
+		</xhtml:div>
 	</xsl:template>
 
 </xsl:stylesheet>

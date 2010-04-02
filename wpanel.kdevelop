@@ -21,6 +21,9 @@
       <activedir/>
       <includepatterns>*.php,*.phps,*.php3,*.inc</includepatterns>
     </general>
+    <run>
+      <directoryradio>executable</directoryradio>
+    </run>
   </kdevscriptproject>
   <kdevdoctreeview>
     <ignoretocs>
@@ -83,7 +86,13 @@
     <groups>
       <group pattern="*.php;*.phps;*.php3" name="PHP files" />
       <group pattern="*.inc" name="Include files" />
+      <hidenonprojectfiles>false</hidenonprojectfiles>
+      <hidenonlocation>false</hidenonlocation>
     </groups>
+    <tree>
+      <hidepatterns>*.o,*.lo,CVS</hidepatterns>
+      <hidenonprojectfiles>false</hidenonprojectfiles>
+    </tree>
   </kdevfileview>
   <substmap>
     <APPNAME>WPanel</APPNAME>

@@ -1,47 +1,36 @@
 <?php
-
-/***************************************************************************
- *   Copyright (C) 2010 by Neel Basu   *
- *   neel.basu.z@gmail.com   *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- *   This program is distributed in the hope that it will be useful,       *
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
- *   GNU General Public License for more details.                          *
- *                                                                         *
- *   You should have received a copy of the GNU General Public License     *
- *   along with this program; if not, write to the                         *
- *   Free Software Foundation, Inc.,                                       *
- *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
- ***************************************************************************/
-
-
-printHeader();
-echo "<h1>Hello World!</h1>\n";
-printFooter();
-
-function printHeader(){
-	echo <<<EOF
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-	<meta name="description" content="" />
-	<meta name="author" content="Neel Basu" />
-	<meta name="keywords" content="" />
-	<title>WPanel</title>
-</head>
-<body>
-
-EOF;
-}
-
-function printFooter(){
-	echo "</body>\n</html>";
-}
-
+	header("Content-Type: application/xhtml+xml");
 ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xml" href="wpanel.xsl" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:bong="http://bong/glob/wpanel"
+			xml:lang="en"
+			lang="en">
+	<head>
+		<title> Transitional DTD XHTML Example </title>
+		<link rel="stylesheet" type="text/css" href="wpanel.css" />
+	</head>
+
+	<body>
+		<b>Hallo World</b>
+		<bong:window closable="on" minimizable="on" maximizable="on" width="300" height="150" title="Hallo World" titlebar="on" draggable="true" style="left: 0px;top: 0px">
+			<bong:layout type="vbox">
+				<bong:layout type="hbox">
+					<bong:QLabel>Name</bong:QLabel>
+					<bong:QLineEdit value="Neel Basu"></bong:QLineEdit>
+				</bong:layout>
+				<bong:layout type="hbox">
+					<bong:QLabel>Age</bong:QLabel>
+					<bong:QLineEdit value="22"></bong:QLineEdit>
+				</bong:layout>
+				<bong:layout type="hbox">
+					<bong:QButton text="Submit"></bong:QButton>
+					<bong:QButton text="Reset"></bong:QButton>
+				</bong:layout>
+			</bong:layout>
+		</bong:window>
+		<div class="x-panel-viewport"></div>
+	</body>
+</html>
