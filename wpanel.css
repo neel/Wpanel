@@ -1,0 +1,135 @@
+.x-panel-window{
+	width:800;
+	height:230;
+	position:absolute;
+	/*border-bottom:1px solid green;*/
+}
+.x-panel-window .x-panel-titlebar{
+	height:29px;
+	width:100%;
+	position:relative;
+}
+.x-panel-window .x-panel-titlebar .x-panel-_lsub{
+	height: 100%;
+	background: transparent url(pix/window-title.lbg.modal.gif) no-repeat;
+}
+.x-panel-window .x-panel-titlebar .x-panel-_lsub .x-panel-_rsub{
+	height: 100%;
+	background: transparent url(pix/window-title.rbg.modal.gif) right no-repeat;
+}
+.x-panel-window .x-panel-titlebar .x-panel-_lsub .x-panel-_rsub .x-panel-_msub{
+	height: 100%;
+	background: transparent url(pix/window-title.bg.gif) repeat-x;
+	margin-left: 9px;
+	margin-right: 9px;
+}
+.x-panel-window .x-panel-titlebar .x-panel-_lsub .x-panel-_rsub .x-panel-_msub .x-panel-_csub{
+	display: block;
+	height: 100%;
+	color: #555555;
+	font-family: 'Lucida Grande','Tahoma','Verdana','Arial','Helvetica',sans-serif;
+	font-size: 13px;
+	text-align: center;
+	padding-top: 5px;
+	font-weight: bold;
+}
+.x-panel-window .x-panel-titlebar .x-panel-_lsub .x-panel-_rsub .x-panel-_msub .x-panel-_csub .x-panel-_cntrl{
+	display: inline-block;
+	float: left;
+	height: 15px;
+	width: 14px;
+	margin-top: 2px;
+	margin-right: 5px;
+	background-color: transparent;
+}
+.x-panel-window .x-panel-titlebar .x-panel-_lsub .x-panel-_rsub .x-panel-_msub .x-panel-_csub .x-panel-_cmx{
+	background: transparent url(pix/window-title.maximizeb.gif) no-repeat;
+}
+.x-panel-window .x-panel-titlebar .x-panel-_lsub .x-panel-_rsub .x-panel-_msub .x-panel-_csub .x-panel-_cmn{
+	background: transparent url(pix/window-title.minimizeb.gif) no-repeat;
+}
+.x-panel-window .x-panel-titlebar .x-panel-_lsub .x-panel-_rsub .x-panel-_msub .x-panel-_csub .x-panel-_ccl{
+	background: transparent url(pix/window-title.closeb.gif) no-repeat;
+}
+.x-panel-window .x-panel-titlebar .x-panel-_lsub .x-panel-_rsub .x-panel-_msub .x-panel-_csub div.x-panel-_cmx:hover{
+	background: transparent url(pix/window-title.maximizeba.gif) no-repeat;
+}
+.x-panel-window .x-panel-titlebar .x-panel-_lsub .x-panel-_rsub .x-panel-_msub .x-panel-_csub div.x-panel-_cmn:hover{
+	background: transparent url(pix/window-title.minimizeba.gif) no-repeat;
+}
+.x-panel-window .x-panel-titlebar .x-panel-_lsub .x-panel-_rsub .x-panel-_msub .x-panel-_csub div.x-panel-_ccl:hover{
+	background: transparent url(pix/window-title.closeba.gif) no-repeat;
+}
+.x-panel-window .x-panel-viewport{
+	border-left: 2px solid #DDDDDD;
+	border-right: 2px solid #DDDDDD;
+	border-bottom: 2px solid #DDDDDD;
+	background: transparent url(pix/window-inner-bg.gif);
+	padding: 2px;
+}
+.x-panel-window .x-panel-titlebar .x-panel-_control{
+	height:100%;
+	width:100px;
+	float:left;
+	position:relative;
+	display:inline-block;
+	background:url("pix/window-title.bg.gif");
+}
+.x-panel-widget{
+	cursor:default;
+	line-height:normal !important;
+	padding:0 6px;
+	white-space:pre;
+}
+
+.x-panel-widget-button{
+	-moz-border-radius-bottomleft:5px;
+	-moz-border-radius-bottomright:5px;
+	-moz-border-radius-topleft:5px;
+	-moz-border-radius-topright:5px;
+	-webkit-border-radius-bottomleft:5px;
+	-webkit-border-radius-bottomright:5px;
+	-webkit-border-radius-topleft:5px;
+	-webkit-border-radius-topright:5px;
+	background:#F4F4F4 none repeat scroll 0 0;
+	border:1px solid #BBBBBB;
+	font-size:11px;
+	font-weight:bold;
+	padding:2px 6px 3px;
+	font-family: 'Lucida Grande','Tahoma','Verdana','Arial','Helvetica',sans-serif;
+	display: inline-block;
+	cursor: pointer;
+	text-align:center;
+}
+.x-panel-widget-lineedit{
+	font-size: 12px;
+	font-family: 'Lucida Grande','Tahoma','Verdana','Arial','Helvetica',sans-serif;
+	display: inline-block;
+}
+.x-panel-widget-label{
+	font-size: 12px;
+	font-family: 'Lucida Grande','Tahoma','Verdana','Arial','Helvetica',sans-serif;
+	display: inline-block;
+}
+.x-panel-widget-button:hover{
+	background-color: #F8F8F8;
+	color: #575757;
+}
+.x-panel-window .x-panel-_layout{
+	/*border: 1px solid #FFFFFF;*/
+	width: 100%;
+}
+.x-panel-window .x-panel-_layout-hbox{
+	overflow:hidden;
+}
+.x-panel-window .x-panel-_layout-vbox{
+	overflow:hidden;
+}
+.x-panel-_layout-vbox > *{
+	float: left;
+	clear: left;
+}
+.x-panel-_layout-hbox > *{
+	height: 100%;
+	float: left;
+}
